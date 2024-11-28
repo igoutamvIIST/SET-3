@@ -8,6 +8,7 @@ Note that 1 is not considered a square free number.
 In this problem, you are asked to write a program to find the number of square free numbers
 that divide a given number
 */
+
 #include <stdio.h>
 void main(){
     int input, j, count = 0;
