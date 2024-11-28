@@ -44,3 +44,29 @@ N=72. The numbers that divide 72 are
 1 is not considered square free. 4, 9 and 36 are perfect squares, and 8,12,18,24 and 72 are divisible by one of them. Hence only 2, 3 and 6 are square free. (It is easily seen that none of
 them are divisible by a perfect square). The result is 3.
 */
+
+#include <stdio.h>
+void main(){
+    int input, j, count = 0;
+    int is_square_free;
+
+    printf("Enter a number: ");
+    scanf("%d", &input);
+    for (int i = 2; i <= input; i++) {
+        if (input % i == 0) {
+            is_square_free = 1;
+            for (j = 2; j * j <= i; j++) {
+                if (i % (j * j) == 0) {
+                    is_square_free = 0;
+                    break;
+                }
+            }
+            if (is_square_free) {
+                count++;
+                printf("Current value of count: %d\n", count);
+            }
+        }
+    }
+    printf("\nSquare-free divisors of %d is: %d\n", input, count);
+}
+
