@@ -15,3 +15,17 @@ Output : 1006
 (Note: This question can also be asked in this way: after finding ORs of subarrays just return all
 distinct values of ORs)
 */
+
+#include <stdio.h>
+int main() {
+    int A[] = {1, 4, 6}; 
+    int N = sizeof(A) / sizeof(A[0]);
+    int total_or = 0; 
+    for (int i = 0; i < N; i++) {
+        total_or |= A[i]; 
+    }
+
+    printf("Output: %d\n", total_or);
+
+    return 0;
+}
