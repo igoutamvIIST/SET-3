@@ -16,3 +16,29 @@ Explanation: Maximum of first 4 elements is 10, similarly for next 4 elements (i
 Input: arr[] = {20, 10, 30}, K = 1
 Output: 20 10 30
 */
+
+#include <stdio.h>
+
+int main() {
+    int arr[] = {1, 2, 3, 1, 4, 5};
+    int K = 3;
+    int N = sizeof(arr) / sizeof(arr[0]);
+
+    if (K > N) {
+        printf("K should not be greater than the size of the array.\n");
+        return 1;
+    }
+
+    for (int i = 0; i <= N - K; i++) {
+        int max = arr[i];
+        for (int j = 1; j < K; j++) {
+            if (arr[i + j] > max) {
+                max = arr[i + j];
+            }
+        }
+        printf("%d ", max);
+    }
+
+    printf("\n");
+    return 0;
+}
